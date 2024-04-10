@@ -48,15 +48,15 @@ You can install Postman via this website: https://www.postman.com/downloads/
     (You might want to use `cargo check` if you only need to verify your work without running the app.)
 
 ## Mandatory Checklists (Publisher)
--   [ ] Clone https://gitlab.com/ichlaffterlalu/bambangshop to a new repository.
+-   [x] Clone https://gitlab.com/ichlaffterlalu/bambangshop to a new repository.
 -   **STAGE 1: Implement models and repositories**
-    -   [ ] Commit: `Create Subscriber model struct.`
-    -   [ ] Commit: `Create Notification model struct.`
-    -   [ ] Commit: `Create Subscriber database and Subscriber repository struct skeleton.`
-    -   [ ] Commit: `Implement add function in Subscriber repository.`
-    -   [ ] Commit: `Implement list_all function in Subscriber repository.`
-    -   [ ] Commit: `Implement delete function in Subscriber repository.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
+    -   [x] Commit: `Create Subscriber model struct.`
+    -   [x] Commit: `Create Notification model struct.`
+    -   [x] Commit: `Create Subscriber database and Subscriber repository struct skeleton.`
+    -   [x] Commit: `Implement add function in Subscriber repository.`
+    -   [x] Commit: `Implement list_all function in Subscriber repository.`
+    -   [x] Commit: `Implement delete function in Subscriber repository.`
+    -   [x] Write answers of your learning module's "Reflection Publisher-1" questions in this README.
 -   **STAGE 2: Implement services and controllers**
     -   [ ] Commit: `Create Notification service struct skeleton.`
     -   [ ] Commit: `Implement subscribe function in Notification service.`
@@ -77,7 +77,11 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+1. Observer pattern and interfaces: In the Observer pattern, the interface is used to define a contract for the Observer (Subscriber). This allows the Subject (Publisher) to communicate with any object that implements this interface, making the system more flexible and extensible. A single Model struct is enough, but using an interface would make it easier to add different types of Observers in the future.
 
+2. Vec vs DashMap for uniqueness: If uniqueness is a requirement for `id` in Program and `url` in Subscriber, a map/dictionary like DashMap would be more suitable than a Vec. This is because checking for uniqueness in a Vec requires iterating over the entire list (O(n) complexity), while in a map/dictionary, this can be done in constant time (O(1) complexity).
+
+3. DashMap vs Singleton for thread safety: The Singleton pattern ensures that a class has only one instance and provides a global point of access to it. However, it doesn't inherently provide thread safety. DashMap, on the other hand, is a concurrent HashMap that is designed to be thread-safe. If you need to access and modify the List of Subscribers from multiple threads, using DashMap would be a better choice.
 #### Reflection Publisher-2
 
 #### Reflection Publisher-3
