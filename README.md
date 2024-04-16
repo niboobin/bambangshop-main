@@ -83,5 +83,10 @@ This is the place for you to write reflections:
 
 3. DashMap vs Singleton for thread safety: The Singleton pattern ensures that a class has only one instance and provides a global point of access to it. However, it doesn't inherently provide thread safety. DashMap, on the other hand, is a concurrent HashMap that is designed to be thread-safe. If you need to access and modify the List of Subscribers from multiple threads, using DashMap would be a better choice.
 #### Reflection Publisher-2
+1. Separation of `Service` and `Repository` from a Model: In the context of software design, separating concerns into different components can make the system more organized, easier to maintain, and more scalable. The `Repository` is typically responsible for data access logic, while the `Service` contains business logic. By separating these from the `Model`, you can change the data storage mechanism or business rules without affecting the other parts of the system. This separation also makes it easier to test each component independently.
+
+2. Interactions between each model affecting code complexity: If we only use the Model and put all the logic (data access, business rules, etc.) in it, the Model can become bloated and difficult to maintain. For example, if the `Program`, `Subscriber`, and `Notification` models all contain their own data access and business logic, changes in one model could potentially affect the others. This tightly coupled design can lead to higher code complexity and make the system more prone to errors.
+
+3. Exploration of Postman: `Postman` is a powerful tool for testing APIs. It allows you to send requests to an API and view the responses. These features can be very helpful in both group projects and future software engineering projects, as they can speed up the process of testing and debugging APIs.
 
 #### Reflection Publisher-3
