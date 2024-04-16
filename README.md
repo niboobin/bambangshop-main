@@ -65,11 +65,11 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [x] Commit: `Implement unsubscribe function in Notification controller.`
     -   [x] Write answers of your learning module's "Reflection Publisher-2" questions in this README.
 -   **STAGE 3: Implement notification mechanism**
-    -   [ ] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
-    -   [ ] Commit: `Implement notify function in Notification service to notify each Subscriber.`
-    -   [ ] Commit: `Implement publish function in Program service and Program controller.`
-    -   [ ] Commit: `Edit Product service methods to call notify after create/delete.`
-    -   [ ] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
+    -   [x] Commit: `Implement update method in Subscriber model to send notification HTTP requests.`
+    -   [x] Commit: `Implement notify function in Notification service to notify each Subscriber.`
+    -   [x] Commit: `Implement publish function in Program service and Program controller.`
+    -   [x] Commit: `Edit Product service methods to call notify after create/delete.`
+    -   [x] Write answers of your learning module's "Reflection Publisher-3" questions in this README.
 
 ## Your Reflections
 This is the place for you to write reflections:
@@ -90,3 +90,12 @@ This is the place for you to write reflections:
 3. Exploration of Postman: `Postman` is a powerful tool for testing APIs. It allows you to send requests to an API and view the responses. These features can be very helpful in both group projects and future software engineering projects, as they can speed up the process of testing and debugging APIs.
 
 #### Reflection Publisher-3
+
+1. Observer Pattern Variation: The tutorial uses the Push model of the Observer pattern. For example,  the NotificationService.notify method, which pushes data (the product and a string indicating the action) to the subscribers.
+
+2. Advantages and Disadvantages of the Pull Model: If we were to use the Pull model in this case, one advantage could be that the subscribers would have more control over when they receive updates, which could be beneficial if processing the updates is resource-intensive. However, a major disadvantage would be increased complexity, as the subscribers would need to periodically check for updates or know exactly when to pull updates. Additionally, there could be a delay in receiving updates, as they would not be received immediately after a change occurs.
+
+3. Impact of Not Using Multi-threading in the Notification Process: If we decide not to use multi-threading in the notification process, the program would still function, but it could become significantly slower, especially if there are many subscribers or if the notification process is time-consuming. Without multi-threading, the program would have to send notifications to each subscriber one at a time, blocking the rest of the program while each notification is being sent. With multi-threading, these notifications could be sent concurrently, potentially improving the program's performance and responsiveness.
+
+
+
